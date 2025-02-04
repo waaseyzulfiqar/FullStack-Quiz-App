@@ -21,7 +21,7 @@ let minutes;
 let timerInterval;
 let score = 0;
 let correctAns = 0;
-let quizTitle = ''
+let quizTitle = "";
 
 const id = sessionStorage.getItem("quizId");
 
@@ -35,7 +35,7 @@ const getQuestions = async () => {
     }
     const docSnap = await getDoc(doc(db, "Quizzes", id));
     minutes = docSnap.data().time;
-    quizTitle = docSnap.data().title
+    quizTitle = docSnap.data().title;
     console.log(docSnap.data());
     return docSnap.data().queArr;
   } catch (error) {
@@ -48,7 +48,7 @@ loader.style.display = "block";
 getQuestions().then((res) => {
   // console.log("res -> ", res);
 
-  quizQuestions = res;
+  quizQuestions = res.sort(() => Math.random() - 0.5); // for question shuffling
 
   loader.style.display = "none";
 
@@ -94,8 +94,9 @@ const render = () => {
     let optionsArray = quizQuestions[currentIndex].options;
 
     for (let i = 0; i < optionsArray.length; i++) {
-      const optionElement = document.createElement('li');
-      optionElement.className = 'cursor-pointer mt-3 border border-2 fw-medium rounded p-2';
+      const optionElement = document.createElement("li");
+      optionElement.className =
+        "cursor-pointer mt-3 border border-2 fw-medium rounded p-2";
       optionElement.innerText = optionsArray[i];
       showOptions.appendChild(optionElement);
     }
@@ -166,25 +167,23 @@ nextBtn.addEventListener("click", () => {
 
 // show result
 const showQuizResult = async () => {
-  loader.style.display = 'block'
+  loader.style.display = "block";
   try {
-
     // saving data to database
 
-    const user = JSON.parse(localStorage.getItem("Current_User"))
+    const user = JSON.parse(localStorage.getItem("Current_User"));
     const scoreObj = {
-        totalQues: quizQuestions.length,
-        score: score,
-        wrongAns: quizQuestions.length - score,
-        quizId: sessionStorage.getItem("quizId"),
-        userId: user.uid,
-        userName: `${user.first_name} ${user.last_name}`,
-        quizTitle: quizTitle
-    }
-    console.log("scoreObj", scoreObj)
-    const response = await addDoc(collection(db, "scores"), scoreObj)
-    console.log("response score", response)
-
+      totalQues: quizQuestions.length,
+      score: score,
+      wrongAns: quizQuestions.length - score,
+      quizId: sessionStorage.getItem("quizId"),
+      userId: user.uid,
+      userName: `${user.first_name} ${user.last_name}`,
+      quizTitle: quizTitle,
+    };
+    console.log("scoreObj", scoreObj);
+    const response = await addDoc(collection(db, "scores"), scoreObj);
+    console.log("response score", response);
 
     // rendering result
 
@@ -196,7 +195,7 @@ const showQuizResult = async () => {
     modal.style.padding = "20px";
     modal.style.zIndex = "99";
 
-    const percentage = (score / quizQuestions.length) * 100 
+    const percentage = (score / quizQuestions.length) * 100;
 
     document.getElementById("result").innerText = `${score}/${
       quizQuestions.length
@@ -210,14 +209,13 @@ const showQuizResult = async () => {
     ).innerHTML = `<i class="fa-solid fa-circle-check" style="color:rgb(17, 132, 65);"></i> Correct Answers: ${correctAns}`;
     document.getElementById(
       "wrongAns"
-    ).innerHTML = `<i class="fa-solid fa-circle-xmark" style="color: #b72a2a;"></i> Wrong Answers: ${quizQuestions.length - score}`;
-
-
+    ).innerHTML = `<i class="fa-solid fa-circle-xmark" style="color: #b72a2a;"></i> Wrong Answers: ${
+      quizQuestions.length - score
+    }`;
   } catch (error) {
-
     console.log(error.message);
-  }finally{
-    loader.style.display = 'none'
+  } finally {
+    loader.style.display = "none";
   }
 };
 

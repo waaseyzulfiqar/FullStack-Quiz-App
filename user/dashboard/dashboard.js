@@ -38,7 +38,7 @@ const getListing = async () => {
                 <h5>${data.title}</h5>
                 <p>${data.queArr.length} questions</p>
                 <div class="success-rate">
-                    <span>✅ Success rate: 70%</span>
+                    <span>✅ Success rate: 60%</span>
                     <button class="btn btn-success btn-sm" onclick="startQuiz('${doc.id}')">▶</button>
                 </div>
             </div>`;
