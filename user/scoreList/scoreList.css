@@ -1,0 +1,221 @@
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+  }
+  
+  .sidebar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar nav ul li {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar nav a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .sidebar .profile-info {
+    margin-top: 20px;
+  }
+  
+  .sidebar .profile-info p {
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  
+  /* Main Content Area */
+  #main-content {
+    /* width: calc(100vw - 250px); */
+    /* height: 100vh; */
+    padding: 20px;
+    margin-left: 300px;
+  }
+  
+  #main-content header {
+    margin-bottom: 20px;
+  }
+  
+  #main-content header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  #main-content header .breadcrumb {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #main-content header .breadcrumb li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  #main-content header .breadcrumb li a {
+    color: #337ab7;
+    text-decoration: none;
+  }
+  
+  #main-content header .breadcrumb li.active {
+    color: #333;
+  }
+  
+  #main-content .content {
+    margin-bottom: 20px;
+  }
+  
+  #main-content footer {
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+  }
+  
+  #main-content footer p {
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  #main-content footer .social-media {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #main-content footer .social-media li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  #main-content footer .social-media li a {
+    color: #337ab7;
+    text-decoration: none;
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .quiz-card {
+    width: 250px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 15px;
+    text-align: center;
+    margin: 15px;
+  }
+  
+  .quiz-icon {
+    width: 100%;
+    height: 140px;
+    background: #0a7746;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 40px;
+    border-radius: 10px;
+  }
+  
+  .quiz-card h5 {
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  .quiz-card p {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .quiz-card .success-rate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .quiz-card .success-rate span {
+    color: green;
+    font-weight: bold;
+  }
+  
+  
+  
+  /* loader */
+  
+  #loader {
+    transition: none !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .sidebar {
+      position: fixed;
+      top: 0;
+      /* left: -50px; */
+      width: 250px;
+      height: 100vh;
+      background-color: #333;
+      padding: 20px;
+      border-right: 1px solid #ddd;
+      transition: left 0.5s ease-in-out;
+    }
+  
+    .sidebar.active {
+      left: 0;
+    }
+  
+    #main-content {
+      width: 100vw;
+      padding: 20px;
+      margin-left: 200px;
+    }
+  }
+  
+  /* Tablet Devices (max-width: 1024px) */
+  @media only screen and (max-width: 1024px) {
+    .sidebar {
+      width: 200px;
+    }
+  
+    #main-content {
+      width: calc(100vw - 200px);
+    }
+  }
+  
+  /* Desktop Devices (min-width: 1025px) */
+  @media only screen and (min-width: 1025px) {
+    .sidebar {
+      width: 250px;
+    }
+  
+    #main-content {
+      width: calc(100vw - 250px);
+    }
+  }
+  

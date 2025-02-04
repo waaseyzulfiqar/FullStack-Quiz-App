@@ -1,0 +1,94 @@
+.navbar {
+    background-color: #343a40;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+    color: #8f94fb;
+  }
+  
+  .navbar-light .navbar-nav .nav-link {
+    color: #8f94fb;
+  }
+  
+  .navbar-light .navbar-nav .nav-link.active,
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: #4f56fb;
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+
+  #cards{
+    display: flex;
+    /* justify-content: center; */
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  /* card */
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-title {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.quiz-description {
+  font-size: 14px;
+  color: #666;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.activate-button, .deactivate-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.activate-button {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+.deactivate-button {
+  background-color: #E74C3C;
+  color: #fff;
+}
+
+.activate-button:hover{
+  background-color: #3dc742;
+}
+
+.deactivate-button:hover{
+  background-color: #d32b19;
+}
+
+/* loader */
+
+#loader {
+  transition: none !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}

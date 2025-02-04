@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz World - Add Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./createQuiz.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom p-4">
+        <div class="container bg-white p-3 rounded">
+            <a class="navbar-brand" href="#">
+                  Quiz World
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../dashboard/dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../quizListing/quizListing.html">Quiz Listing</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="px-3">
+      <div class="container" id="container">
+          <h2>Add Quiz</h2>
+          <div>
+              <label>Title</label>
+              <input type="text" id="title" placeholder="Enter Quiz Title...">
+              
+              <label>Category</label>
+              <input type="text" id="category" placeholder="Enter Question Category...">
+              
+              <label>Time</label>
+              <input type="number" id="minutes" placeholder="Enter Time in Minutes...">
+              
+              <label>Question</label>
+              <input type="text" id="question" placeholder="Enter Question...">
+              
+              <div class="grid">
+                  <div>
+                      <label>Option 1</label>
+                      <input type="text" id="option1" placeholder="Enter Option 1...">
+                  </div>
+                  <div>
+                      <label>Option 2</label>
+                      <input type="text" id="option2" placeholder="Enter Option 2...">
+                  </div>
+                  <div>
+                      <label>Option 3</label>
+                      <input type="text" id="option3" placeholder="Enter Option 3...">
+                  </div>
+                  <div>
+                      <label>Option 4</label>
+                      <input type="text" id="option4" placeholder="Enter Option 4...">
+                  </div>
+              </div>
+              
+              <label>Correct Answer</label>
+              <input type="text" id="correctAns" placeholder="Correct Answer...">
+              
+              <div class="buttons">
+                  <button type="button" class="new-question" onclick="handleAddNewQuestion()">New Question</button>
+                  <button type="submit" class="create-quiz" onclick="handleCreateQuiz()">Create Quiz</button>
+              </div>
+          </div>
+      </div>
+
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./createQuiz.js"></script>
+</body>
+</html>
