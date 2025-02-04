@@ -196,9 +196,11 @@ const showQuizResult = async () => {
     modal.style.padding = "20px";
     modal.style.zIndex = "99";
 
+    const percentage = (score / quizQuestions.length) * 100 
+
     document.getElementById("result").innerText = `${score}/${
       quizQuestions.length
-    } = ${(score / quizQuestions.length) * 100}%`;
+    } = ${percentage.toFixed(1)}%`;
     document.getElementById("resultImg").src =
       correctAns > quizQuestions.length - score
         ? "../../assets/smiling-face.png"
