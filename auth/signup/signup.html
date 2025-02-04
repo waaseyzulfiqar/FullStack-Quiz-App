@@ -2,29 +2,37 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Quiz App</title>
-    <link rel="stylesheet" href="signup.css">
+    <link href="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.15.10/dist/sweetalert2.min.css
+    " rel="stylesheet" />
+    <link rel="stylesheet" href="signup.css" />
 </head>
 
 <body>
-
     <div class="main-container">
         <div class="container">
             <div class="heading">Sign Up</div>
             <div class="form" id="signup-form">
-                <input class="input" type="text" id="first-name" autocomplete="given-name" placeholder="First Name">
-                <input class="input" type="text" id="last-name" autocomplete="family-name" placeholder="Last Name">
-                <input class="input" type="email" id="email" autocomplete="email" placeholder="E-mail">
-                <input class="input" type="password" id="password" autocomplete="new-password" placeholder="Password">
-                <input class="input" type="password" id="confirm-password" autocomplete="new-password" placeholder="Confirm Password">
+                <input class="input" type="text" id="first-name" autocomplete="given-name" placeholder="First Name" />
+                <input class="input" type="text" id="last-name" autocomplete="family-name" placeholder="Last Name" />
+                <input class="input" type="email" id="email" autocomplete="email" placeholder="E-mail" />
+                <input class="input" type="password" id="password" autocomplete="new-password" placeholder="Password" />
+                <input class="input" type="password" id="confirm-password" autocomplete="new-password"
+                    placeholder="Confirm Password" />
                 <span class="forgot-password"><a href="../../index.html">Already have an account</a></span>
-                <button class="login-button" type="submit" onclick="handleSignup()">Sign Up</button>
+                <button class="login-button" type="submit" onclick="handleSignup()">
+                    Sign Up
+                </button>
             </div>
         </div>
     </div>
 
+    <script src="
+        https://cdn.jsdelivr.net/npm/sweetalert2@11.15.10/dist/sweetalert2.all.min.js">
+    </script>
     <script type="module" src="./signup.js"></script>
 </body>
 

@@ -1,4 +1,4 @@
-/* Sidebar */
+/* General Sidebar */
 .sidebar {
   position: fixed;
   top: 0;
@@ -8,6 +8,8 @@
   background-color: #333;
   padding: 20px;
   border-right: 1px solid #ddd;
+  transition: left 0.5s ease-in-out;
+  z-index: 1000;
 }
 
 .sidebar .logo {
@@ -44,7 +46,8 @@
 /* Main Content Area */
 #main-content {
   padding: 20px;
-  margin-left: 300px;
+  margin-left: 250px;
+  transition: margin-left 0.5s ease-in-out;
 }
 
 #main-content header {
@@ -116,76 +119,92 @@
   font-weight: 600;
   margin-top: 10px;
 }
+
 .quiz-card p {
   color: #555;
   font-size: 14px;
   margin-bottom: 10px;
 }
+
 .quiz-card .success-rate {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .quiz-card .success-rate span {
   color: green;
   font-weight: bold;
 }
 
-
-
-/* loader */
-
+/* Loader */
 #loader {
   transition: none !important;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: 10000;
 }
 
+/* Media Queries for Mobile and Tablet */
 @media only screen and (max-width: 768px) {
+  /* Sidebar */
   .sidebar {
-    position: fixed;
-    top: 0;
-    left: -10px;
+    left: -250px; /* Sidebar hidden by default */
     width: 250px;
-    height: 100vh;
-    background-color: #333;
-    padding: 20px;
-    border-right: 1px solid #ddd;
-    transition: left 0.5s ease-in-out;
   }
 
   .sidebar.active {
-    left: 0;
+    left: 0; /* Sidebar shown when active */
   }
 
   #main-content {
-    width: 100vw;
     padding: 20px;
-    margin-left: 200px;
+    margin-left: 0; /* No left margin for mobile */
+  }
+
+  .card, .quiz-card {
+    width: 60%; /* Cards take full width on mobile */
+  }
+
+  #toggleSidebar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: transparent;
+    border: none;
+    color: #0c0b0b;
+    font-size: 24px;
+    z-index: 1100; /* Ensure the button appears above the content */
+  }
+
+  #main-content{
+    justify-content: center;
+    align-items: center;
   }
 }
 
-/* Tablet Devices (max-width: 1024px) */
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 480px) {
+  /* Small screens - Adjust sidebar width */
   .sidebar {
     width: 200px;
   }
 
-  #main-content {
-    width: calc(100vw - 200px);
+  /* Cards & Quiz Cards */
+  .card, .quiz-card {
+    width: 100%;
+    margin-bottom: 20px; /* Spacing between cards */
   }
 }
 
-/* Desktop Devices (min-width: 1025px) */
 @media only screen and (min-width: 1025px) {
+  /* For larger screens */
   .sidebar {
     width: 250px;
   }
 
   #main-content {
-    width: calc(100vw - 250px);
+    margin-left: 250px; /* Adjust for sidebar */
   }
 }
