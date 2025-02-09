@@ -5,11 +5,22 @@ const authCheck = () => {
         if (!currentUser) {
             window.location.replace('../../index.html');
         }
+
+        if(currentUser.role !== 'Admin'){
+            window.location.replace('../../user/dashboard/dashboard.html')
+        }
     } catch (error) {
         console.error('Error parsing current user:', error);
     }
 };
 
 
-authCheck()
-// window.authCheck = authCheck;
+window.addEventListener("load", authCheck)
+
+
+const handleLogout = () =>{
+    localStorage.removeItem('Current_User')
+}
+
+window.authCheck = authCheck;
+window.handleLogout = handleLogout;

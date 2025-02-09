@@ -15,6 +15,27 @@
 //     ],
 // }
 
+
+// authcheck
+
+const authCheck = () => {
+  try {
+      const currentUser = JSON.parse(localStorage.getItem('Current_User'));
+
+      if (!currentUser) {
+          window.location.replace('../../index.html');
+      }
+
+      if(currentUser.role !== 'Admin'){
+          window.location.replace('../../user/dashboard/dashboard.html')
+      }
+  } catch (error) {
+      console.error('Error parsing current user:', error);
+  }
+};
+
+// code starts here 
+
 import { addDoc, collection, db } from "../../firebase.js";
 
 const title = document.querySelector("#title");
@@ -77,5 +98,11 @@ const handleAddNewQuestion = () => {
   console.log("questions ", questions);
 };
 
+const handleLogout = () =>{
+  localStorage.removeItem('Current_User')
+}
+
 window.handleCreateQuiz = handleCreateQuiz;
 window.handleAddNewQuestion = handleAddNewQuestion;
+window.handleLogout = handleLogout;
+window.authCheck = authCheck;

@@ -36,7 +36,7 @@ const getQuestions = async () => {
     const docSnap = await getDoc(doc(db, "Quizzes", id));
     minutes = docSnap.data().time;
     quizTitle = docSnap.data().title;
-    console.log(docSnap.data());
+    // console.log(docSnap.data());
     return docSnap.data().queArr;
   } catch (error) {
     alert(error.message);
@@ -181,9 +181,9 @@ const showQuizResult = async () => {
       userName: `${user.first_name} ${user.last_name}`,
       quizTitle: quizTitle,
     };
-    console.log("scoreObj", scoreObj);
+    // console.log("scoreObj", scoreObj);
     const response = await addDoc(collection(db, "scores"), scoreObj);
-    console.log("response score", response);
+    // console.log("response score", response);
 
     // rendering result
 

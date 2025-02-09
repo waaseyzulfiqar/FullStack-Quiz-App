@@ -1,3 +1,21 @@
+// authcheck
+
+const authCheck = () => {
+  try {
+      const currentUser = JSON.parse(localStorage.getItem('Current_User'));
+
+      if (!currentUser) {
+          window.location.replace('../../index.html');
+      }
+
+      if(currentUser.role !== 'Admin'){
+          window.location.replace('../../user/dashboard/dashboard.html')
+      }
+  } catch (error) {
+      console.error('Error parsing current user:', error);
+  }
+};
+
 import { collection, db, doc, getDocs, updateDoc } from "../../firebase.js";
 
 const cardsDiv = document.getElementById("cards");
@@ -45,5 +63,11 @@ const togglerFunc = async (elem, isActive) => {
   handleActiveInactive();
 };
 
+const handleLogout = () =>{
+  localStorage.removeItem('Current_User')
+}
+
 window.togglerFunc = togglerFunc;
 window.handleActiveInactive = handleActiveInactive;
+window.handleLogout = handleLogout;
+window.authCheck = authCheck;

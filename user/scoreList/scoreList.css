@@ -43,10 +43,7 @@
   
   /* Main Content Area */
   #main-content {
-    /* width: calc(100vw - 250px); */
-    /* height: 100vh; */
-    padding: 20px;
-    margin-left: 300px;
+    margin-left: 250px;
   }
   
   #main-content header {
@@ -83,84 +80,70 @@
     margin-bottom: 20px;
   }
   
-  #main-content footer {
-    background-color: #f7f7f7;
-    padding: 10px;
-    border-top: 1px solid #ddd;
-  }
-  
-  #main-content footer p {
-    color: #666;
-    margin-bottom: 10px;
-  }
-  
-  #main-content footer .social-media {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  #main-content footer .social-media li {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  #main-content footer .social-media li a {
-    color: #337ab7;
-    text-decoration: none;
-  }
-  
-  .card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    width: 300px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .quiz-card {
-    width: 250px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    padding: 15px;
-    text-align: center;
-    margin: 15px;
-  }
-  
-  .quiz-icon {
-    width: 100%;
-    height: 140px;
-    background: #0a7746;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+  body {
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #007bff;
     color: white;
-    font-size: 40px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.table {
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+
+.table th {
+    background-color: #343a40;
+    color: white;
+    border: none;
+}
+
+.table td {
+    background-color: white;
+    border: none;
     border-radius: 10px;
-  }
-  
-  .quiz-card h5 {
-    font-weight: 600;
-    margin-top: 10px;
-  }
-  .quiz-card p {
-    color: #555;
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  .quiz-card .success-rate {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .quiz-card .success-rate span {
-    color: green;
-    font-weight: bold;
-  }
-  
-  
+    vertical-align: middle;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-size: 12px;
+}
+
+.status-pass {
+    background-color: #28a745;
+    color: white;
+}
+
+.status-fail {
+    background-color: #dc3545;
+    color: white;
+}
+
+.action-btn {
+    color: #343a40;
+    font-size: 16px;
+}
+
+.action-btn:hover {
+    color: #007bff;
+}
+
   
   /* loader */
   

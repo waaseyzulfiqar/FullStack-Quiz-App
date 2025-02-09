@@ -63,7 +63,8 @@ const getListing = async () => {
 getListing();
 
 const startQuiz = (id) => {
-  console.log(id);
+  
+  // console.log(id);
 
   sessionStorage.setItem("quizId", id);
   window.location.assign("../quizApp/quizApp.html");
