@@ -46,69 +46,46 @@
 
   <div class="container mt-5">
     <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-header">
-                    <div class="d-flex justify-content-between flex-wrap">
-                        <button id="dropdownActionButton" class="btn btn-secondary dropdown-toggle mb-2" type="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Action
-                        </button>
-                        <!-- Dropdown menu -->
-                        <ul id="dropdownAction" class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Reward</a></li>
-                            <li><a class="dropdown-item" href="#">Promote</a></li>
-                            <li><a class="dropdown-item" href="#">Activate account</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Delete User</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Position</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="ms-1">
-                                                <p class="fw-bold mb-1">John Doe</p>
-                                                <p class="text-muted mb-0">john.doe@example.com</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>React Developer</td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="me-2 bg-success p-1 rounded-circle">
-                                                <i class="fas fa-circle text-white"></i>
-                                            </div>
-                                            <p class="fw-normal mb-0">Online</p>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-link" data-bs-toggle="tooltip" title="Edit user">
-                                            <i class="fas fa-pencil-alt"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <!-- Add more rows as needed -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <div class="d-flex justify-content-between flex-wrap">
+              <button id="dropdownActionButton" class="btn btn-secondary dropdown-toggle mb-2" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Action
+              </button>
+              <!-- Dropdown menu -->
+              <ul id="dropdownAction" class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Reward</a></li>
+                <li><a class="dropdown-item" href="#">Promote</a></li>
+                <li><a class="dropdown-item" href="#">Activate account</a></li>
+                <li><a class="dropdown-item" href="#">Delete User</a></li>
+              </ul>
             </div>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Quiz Title</th>
+                    <th scope="col">Wrong Ans</th>
+                    <th scope="col">Total Ques</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Percentage</th>
+                  </tr>
+                </thead>
+                <tbody id="tableContainer">
+                  <!-- Add more rows as needed -->
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
 
 
 
