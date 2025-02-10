@@ -25,9 +25,11 @@ const handleLogout = () => {
 };
 
 const table = document.getElementById("tableContainer");
+const loader = document.getElementById("loader");
 
 const getScoreListing = async () => {
     tableContainer.innerHTML = "";
+    loader.classList.remove('d-none')
   try {
     const querySnapshot = await getDocs(collection(db, "scores"));
     querySnapshot.forEach((doc) => {
@@ -53,6 +55,8 @@ const getScoreListing = async () => {
     });
   } catch (error) {
     alert(error.message);
+  }finally{
+    loader.classList.add('d-none')
   }
 };
 
