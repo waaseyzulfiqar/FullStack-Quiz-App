@@ -8,7 +8,7 @@ const authUserCheck = () => {
   }
 
   if (user.role !== "user") {
-    window.location.replace("../../admin/dashbaord/dashboard.html");
+    window.location.replace("../../admin/dashboard/dashboard.html");
     return;
   }
 };

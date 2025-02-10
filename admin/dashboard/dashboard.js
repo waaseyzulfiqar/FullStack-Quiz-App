@@ -8,7 +8,7 @@ const authAdminCheck = () => {
   }
 
   if (user.role !== "Admin") {
-      window.location.replace("../../user/dashbaord/dashboard.html")
+      window.location.replace("../../user/dashboard/dashboard.html")
       return
   }
 }
