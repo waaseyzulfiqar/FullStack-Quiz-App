@@ -15,6 +15,11 @@
 
     <div class="dashboard">
 
+        <!-- Toggle Sidebar Button (visible only on small screens) -->
+        <button id="toggleSidebar" class="btn btn-primary d-block d-md-none m-1">
+            <i class="fa fa-bars"></i>
+        </button>
+
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="logo">Quiz Maker App</div>
@@ -22,17 +27,14 @@
                 <ul>
                     <li><a href="#">Dashboard</a></li>
                     <li><a href="../scoreList/scoreList.html">My Quizzes</a></li>
+                    <li class="text-white cursor" onclick="handleLogout()">Logout</li>
                 </ul>
             </nav>
 
             <!-- Close Button (inside sidebar) -->
-            <button id="closeSidebar" class="btn-close text-white d-block d-md-none" aria-label="Close"></button>
+            <button id="closeSidebar" class="btn-close btn-close-white d-block d-md-none" aria-label="Close"></button>
         </div>
 
-        <!-- Toggle Sidebar Button (visible only on small screens) -->
-        <button id="toggleSidebar" class="btn btn-primary d-block d-md-none m-1">
-            <i class="fa fa-bars"></i>
-        </button>
 
         <!-- Main Content Area -->
         <div id="loader" class="loader-container d-flex justify-content-center align-items-center d-none h-100">
@@ -52,13 +54,17 @@
 
     <script>
         // Toggle sidebar visibility on mobile screens (open menu)
-        document.getElementById('toggleSidebar').addEventListener('click', function() {
+        const toggleSidebar = document.getElementById('toggleSidebar')
+        toggleSidebar.addEventListener('click', function () {
             document.querySelector('.sidebar').classList.add('active');
+            toggleSidebar.classList.add('d-none')
         });
 
         // Close the sidebar when the close button inside the sidebar is clicked
-        document.getElementById('closeSidebar').addEventListener('click', function() {
+        const closeSidebar = document.getElementById('closeSidebar')
+        closeSidebar.addEventListener('click', function () {
             document.querySelector('.sidebar').classList.remove('active');
+            toggleSidebar.classList.remove('d-none')
         });
     </script>
 

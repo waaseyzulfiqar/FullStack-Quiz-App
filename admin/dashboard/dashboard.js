@@ -1,22 +1,24 @@
+const authAdminCheck = () => {
+  const user = JSON.parse(localStorage.getItem("Current_User"))
+
+  console.log("authCheck", user)
+
+  if (user === null) {
+      window.location.replace('../../index.html')
+  }
+
+  if (user.role !== "Admin") {
+      window.location.replace("../../user/dashbaord/dashboard.html")
+      return
+  }
+}
+
+authAdminCheck()
+
+// code starts here
+
 import { collection, db, doc, getDocs } from "../../firebase.js";
 
-const authCheck = () => {
-  try {
-    const currentUser = JSON.parse(localStorage.getItem("Current_User"));
-
-    if (!currentUser) {
-      window.location.replace("../../index.html");
-    }
-
-    if (currentUser.role !== "Admin") {
-      window.location.replace("../../user/dashboard/dashboard.html");
-    }
-  } catch (error) {
-    console.error("Error parsing current user:", error);
-  }
-};
-
-window.addEventListener("load", authCheck);
 
 const handleLogout = () => {
   localStorage.removeItem("Current_User");
@@ -56,6 +58,6 @@ const getScoreListing = async () => {
 
 getScoreListing();
 
-window.authCheck = authCheck;
+window.authAdminCheck = authAdminCheck;
 window.handleLogout = handleLogout;
 window.getScoreListing = getScoreListing;

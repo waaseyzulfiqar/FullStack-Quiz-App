@@ -1,3 +1,22 @@
+const authUserCheck = () => {
+  const user = JSON.parse(localStorage.getItem("Current_User"))
+
+  console.log("authCheck", user)
+
+  if (user === null) {
+      window.location.replace('../../index.html')
+  }
+
+  if (user.role !== "user") {
+      window.location.replace("../../admin/dashbaord/dashboard.html")
+      return
+  }
+}
+
+authUserCheck()
+
+// code starts here 
+
 import { addDoc, collection, db, doc, getDoc } from "../../firebase.js";
 
 let quizQuestions = [];
@@ -223,3 +242,4 @@ window.stopTimer = stopTimer;
 window.startTimer = startTimer;
 window.goToNextQuestion = goToNextQuestion;
 window.showQuizResult = showQuizResult;
+window.authUserCheck = authUserCheck

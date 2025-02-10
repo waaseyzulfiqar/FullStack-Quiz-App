@@ -1,204 +1,212 @@
 /* Sidebar */
 .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: 100vh;
-    background-color: #333;
-    padding: 20px;
-    border-right: 1px solid #ddd;
-  }
-  
-  .sidebar .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 20px;
-  }
-  
-  .sidebar nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .sidebar nav ul li {
-    margin-bottom: 10px;
-  }
-  
-  .sidebar nav a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .sidebar .profile-info {
-    margin-top: 20px;
-  }
-  
-  .sidebar .profile-info p {
-    color: #fff;
-    margin-bottom: 10px;
-  }
-  
-  /* Main Content Area */
-  #main-content {
-    margin-left: 250px;
-  }
-  
-  #main-content header {
-    margin-bottom: 20px;
-  }
-  
-  #main-content header h1 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  #main-content header .breadcrumb {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  #main-content header .breadcrumb li {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  #main-content header .breadcrumb li a {
-    color: #337ab7;
-    text-decoration: none;
-  }
-  
-  #main-content header .breadcrumb li.active {
-    color: #333;
-  }
-  
-  #main-content .content {
-    margin-bottom: 20px;
-  }
-  
-
-  body {
-    background-color: #f8f9fa;
-    font-family: 'Arial', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: #333;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  transition: left 0.3s ease;
+  z-index: 1000;
 }
 
-.card {
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.sidebar .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+
+
+.sidebar .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.sidebar .profile-info {
+  margin-top: 20px;
+}
+
+.sidebar .profile-info p {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+/* Main Content Area */
+#main-content {
+  margin-left: 250px;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+  box-sizing: border-box;
+}
+
+#main-content header {
+  margin-bottom: 20px;
+}
+
+#main-content header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+#main-content header .breadcrumb {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#main-content header .breadcrumb li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+#main-content header .breadcrumb li a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+#main-content header .breadcrumb li.active {
+  color: #333;
+}
+
+#main-content .content {
+  margin-bottom: 20px;
 }
 
 .card-header {
-    background-color: #007bff;
-    color: white;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+  background-color: #007bff;
+  color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 .table {
-    border-collapse: separate;
-    border-spacing: 0 15px;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  width: 100% !important;
 }
 
 .table th {
-    background-color: #343a40;
-    color: white;
-    border: none;
+  background-color: #343a40;
+  color: white;
+  border: none;
 }
 
 .table td {
-    background-color: white;
-    border: none;
-    border-radius: 10px;
-    vertical-align: middle;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  vertical-align: middle;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 
 .status-badge {
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 50px;
-    font-size: 12px;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-size: 12px;
 }
 
 .status-pass {
-    background-color: #28a745;
-    color: white;
+  background-color: #28a745;
+  color: white;
 }
 
 .status-fail {
-    background-color: #dc3545;
-    color: white;
+  background-color: #dc3545;
+  color: white;
 }
 
 .action-btn {
-    color: #343a40;
-    font-size: 16px;
+  color: #343a40;
+  font-size: 16px;
 }
 
 .action-btn:hover {
-    color: #007bff;
+  color: #007bff;
 }
 
-  
-  /* loader */
-  
-  #loader {
-    transition: none !important;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
+#toggleSidebar {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: transparent;
+  border: none;
+  color: #333 !important;
+  font-size: 24px;
+  z-index: 1200;
+}
+
+#closeSidebar {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+/* Loader */
+#loader {
+  transition: none !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+}
+
+.cursor{
+  cursor: pointer !important;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+  .sidebar {
+    left: -250px;
+    width: 250px;
+
   }
-  
-  @media only screen and (max-width: 768px) {
-    .sidebar {
-      position: fixed;
-      top: 0;
-      /* left: -50px; */
-      width: 250px;
-      height: 100vh;
-      background-color: #333;
-      padding: 20px;
-      border-right: 1px solid #ddd;
-      transition: left 0.5s ease-in-out;
-    }
-  
-    .sidebar.active {
-      left: 0;
-    }
-  
-    #main-content {
-      width: 100vw;
-      padding: 20px;
-      margin-left: 200px;
-    }
+
+  .sidebar.active {
+    left: 0;
   }
-  
-  /* Tablet Devices (max-width: 1024px) */
-  @media only screen and (max-width: 1024px) {
-    .sidebar {
-      width: 200px;
-    }
-  
-    #main-content {
-      width: calc(100vw - 200px);
-    }
+
+  #main-content {
+    margin-left: 0;
+    padding: 20px;
+    text-align: center;
   }
-  
-  /* Desktop Devices (min-width: 1025px) */
-  @media only screen and (min-width: 1025px) {
-    .sidebar {
-      width: 250px;
-    }
-  
-    #main-content {
-      width: calc(100vw - 250px);
-    }
+}
+
+@media only screen and (min-width: 1025px) {
+  .sidebar {
+    width: 250px;
   }
-  
+
+  #main-content {
+    margin-left: 250px;
+  }
+}

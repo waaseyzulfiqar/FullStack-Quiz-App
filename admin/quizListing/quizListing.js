@@ -1,20 +1,21 @@
 // authcheck
 
-const authCheck = () => {
-  try {
-      const currentUser = JSON.parse(localStorage.getItem('Current_User'));
+const authAdminCheck = () => {
+  const user = JSON.parse(localStorage.getItem("Current_User"))
 
-      if (!currentUser) {
-          window.location.replace('../../index.html');
-      }
+  console.log("authCheck", user)
 
-      if(currentUser.role !== 'Admin'){
-          window.location.replace('../../user/dashboard/dashboard.html')
-      }
-  } catch (error) {
-      console.error('Error parsing current user:', error);
+  if (user === null) {
+      window.location.replace('../../index.html')
   }
-};
+
+  if (user.role !== "Admin") {
+      window.location.replace("../../user/dashbaord/dashboard.html")
+      return
+  }
+}
+
+authAdminCheck()
 
 import { collection, db, doc, getDocs, updateDoc } from "../../firebase.js";
 
@@ -70,4 +71,4 @@ const handleLogout = () =>{
 window.togglerFunc = togglerFunc;
 window.handleActiveInactive = handleActiveInactive;
 window.handleLogout = handleLogout;
-window.authCheck = authCheck;
+window.authAdminCheck = authAdminCheck;

@@ -1,3 +1,23 @@
+const authUserCheck = () => {
+  const user = JSON.parse(localStorage.getItem("Current_User"))
+
+  console.log("authCheck", user)
+
+  if (user === null) {
+      window.location.replace('../../index.html')
+  }
+
+  if (user.role !== "user") {
+      window.location.replace("../../admin/dashbaord/dashboard.html")
+      return
+  }
+}
+
+authUserCheck()
+
+// code starts here 
+
+
 import { collection, db, getDocs } from "../../firebase.js";
 
 const authCheck = () => {
@@ -70,6 +90,14 @@ const startQuiz = (id) => {
   window.location.assign("../quizApp/quizApp.html");
 };
 
+const handleLogout = () => {
+  localStorage.removeItem('Current_User')
+  window.location.href = '../../index.html'
+  
+}
+
 window.authCheck = authCheck;
 window.getListing = getListing;
 window.startQuiz = startQuiz;
+window.handleLogout = handleLogout
+window.authUserCheck = authUserCheck

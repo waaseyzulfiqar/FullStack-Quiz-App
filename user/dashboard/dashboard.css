@@ -147,6 +147,16 @@
   z-index: 10000;
 }
 
+#closeSidebar {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.cursor{
+  cursor: pointer !important;
+}
+
 /* Media Queries for Mobile and Tablet */
 @media only screen and (max-width: 768px) {
   /* Sidebar */
@@ -164,7 +174,8 @@
     margin-left: 0; /* No left margin for mobile */
   }
 
-  .card, .quiz-card {
+  .card,
+  .quiz-card {
     width: 60%; /* Cards take full width on mobile */
   }
 
@@ -179,7 +190,7 @@
     z-index: 1100; /* Ensure the button appears above the content */
   }
 
-  #main-content{
+  #main-content {
     justify-content: center;
     align-items: center;
   }
@@ -192,7 +203,8 @@
   }
 
   /* Cards & Quiz Cards */
-  .card, .quiz-card {
+  .card,
+  .quiz-card {
     width: 100%;
     margin-bottom: 20px; /* Spacing between cards */
   }
