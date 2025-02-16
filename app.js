@@ -7,6 +7,8 @@ import {
 } from "./firebase.js";
 
 const handleFormSubmit = async () => {
+
+  document.querySelector('.login-button').disabled = true
   try {
     const email = document.querySelector("#email");
     const password = document.querySelector("#password");

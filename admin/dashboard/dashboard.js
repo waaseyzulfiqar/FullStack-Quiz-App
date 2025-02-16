@@ -34,7 +34,7 @@ const getScoreListing = async () => {
     const querySnapshot = await getDocs(collection(db, "scores"));
     querySnapshot.forEach((doc) => {
       const data = doc.data();
-      console.log(data);
+      // console.log(data);
       let percentage = (data.score / data.totalQues) * 100;
       tableContainer.innerHTML += `<tr>
                     <td>
