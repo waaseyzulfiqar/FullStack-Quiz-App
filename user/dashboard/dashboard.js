@@ -1,7 +1,7 @@
 const authUserCheck = () => {
   const user = JSON.parse(localStorage.getItem("Current_User"))
 
-  console.log("authCheck", user)
+  // console.log("authCheck", user)
 
   if (user === null) {
       window.location.replace('../../index.html')
@@ -66,7 +66,7 @@ const getListing = async () => {
 
     });
     if(!hasActiveQuiz){
-      mainContent.innerHTML += `<div class="vh-100 d-flex flex-column justify-content-center align-items-center">
+      mainContent.innerHTML += `<div class="vh-100 mx-auto d-flex flex-column justify-content-center align-items-center">
       <img class="w-25 text-success" src='../../assets/empty-box.svg'/>
       <h3>No Active Quiz Available!</h3>
       <p>Contact Admin to Activate Your Quiz</p>

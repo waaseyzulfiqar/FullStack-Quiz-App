@@ -1,7 +1,7 @@
 const authAdminCheck = () => {
   const user = JSON.parse(localStorage.getItem("Current_User"))
 
-  console.log("authCheck", user)
+  // console.log("authCheck", user)
 
   if (user === null) {
       window.location.replace('../../index.html')
