@@ -62,7 +62,8 @@ const handleSignup = async () => {
     await setDoc(doc(db, "Users", authenticatedData.user.uid), userData);
     window.location.replace("../../index.html");
   } catch (error) {
-    console.log(error.message);
+    alert(error.message);
+    location.reload();
   }
 };
 

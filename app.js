@@ -66,8 +66,8 @@ const handleFormSubmit = async () => {
 
   } catch (error) {
     alert(error.message);
+    location.reload();
   }
 };
-
 
 window.handleFormSubmit = handleFormSubmit;
